@@ -1,5 +1,9 @@
+import { createBrowserRouter } from 'react-router-dom';
+import MainLayout from "../Layout/MainLayout.jsx";
 
-
-const MainRoute = 
-
-export default MainRoute;
+export const MainRoute = createBrowserRouter([
+    {
+        path: "/",
+        element: <MainLayout></MainLayout>
+    }
+])
