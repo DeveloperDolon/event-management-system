@@ -4,7 +4,7 @@ import logo from "../../../assets/logo1.png"
 const NavBar = () => {
     return (
         <div>
-            <div className="navbar py-5">
+            <div className="navbar py-5 z-20">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -12,18 +12,24 @@ const NavBar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li><NavLink to={"/"}>Home</NavLink></li>
-                            <li><NavLink to={"/login"}>Log In</NavLink></li>
-                            <li><NavLink to={"/register"}>Register</NavLink></li>
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case z-20"><img className="h-10" src={logo} alt="Logo Image" /></a>
                 </div>
-                <div className="navbar-end hidden lg:flex">
+                <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-2">
                         <li><NavLink className="text-white" to={"/"}>Home</NavLink></li>
-                        <li><NavLink className="text-white" to={"/login"}>Log In</NavLink></li>
-                        <li><NavLink className="text-white" to={"/register"}>Register</NavLink></li>
                     </ul>
+                </div>
+                <div className="navbar-end z-20">
+                    <NavLink
+                    to="/login"
+                    className={({ isActive, isPending }) =>{
+                        return isPending ? "pending" : isActive ? "bg-[#0097e6] btn bg-transparent text-white border-white border-2 px-7 hover:bg-[#0097e6]" : "btn bg-transparent text-white border-white border-2 px-7 hover:bg-[#0097e6]"
+                    }
+                    
+                    }
+                    >Login</NavLink>
                 </div>
             </div>
         </div>

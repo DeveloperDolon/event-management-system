@@ -28,7 +28,7 @@ const Home = () => {
     };
 
     useEffect(() => {
-        fetch("./eventItems.json")
+        fetch("/eventItems.json")
             .then((res) => res.json())
             .then(data => setEventItems(data))
     }, []);
