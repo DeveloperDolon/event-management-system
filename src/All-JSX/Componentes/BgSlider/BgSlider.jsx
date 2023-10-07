@@ -5,8 +5,6 @@ import "./bgslider.css";
 
 const BgSlider = () => {
 
-
-
     return (
         <div>
             <Swiper

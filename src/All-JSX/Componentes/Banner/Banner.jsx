@@ -27,7 +27,7 @@ const Banner = () => {
                 </ScrollAnimation>
 
                 <ScrollAnimation>
-                    <p className=" mt-5 leading-loose text-white">
+                    <p className=" mt-5 leading-loose md:text-base text-xs text-white">
                         Welcome to CorporateEventsHub.com, your premier source for crafting unforgettable corporate gatherings. At Corporate Events Hub, we specialize in bringing your corporate vision to life, one event at a time.
                     </p>
                 </ScrollAnimation>
