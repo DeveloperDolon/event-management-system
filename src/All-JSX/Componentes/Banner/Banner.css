@@ -14,7 +14,7 @@ button#banner-button:hover {
     letter-spacing: 10px;
 }
 
-#card-btn{
+#card-btn{  
     background-color: #00a8ff;
     transition: .5s ease all !important;
 }

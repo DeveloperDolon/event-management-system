@@ -36,6 +36,7 @@
     justify-content: center !important;
     width: 40%!important;
     border-radius: 2rem!important;
+    height: auto!important;
   }
 
 .overlay {

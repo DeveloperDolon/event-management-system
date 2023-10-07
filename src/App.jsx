@@ -1,7 +1,7 @@
 
 import './App.css'
 
-function App() {
+function App() { 
 
   /**
     https://i.ibb.co/SyWRdVY/wan-san-yip-ID1y-Wa1-Wpx0-unsplash.jpg --> award function 
