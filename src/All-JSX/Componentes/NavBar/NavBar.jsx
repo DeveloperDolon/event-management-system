@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../../assets/logo1.png"
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const NavBar = () => {
+
+    const {user} = useContext(AuthContext);
+
     return (
         <div>
             <div className="navbar py-5 z-20">
@@ -22,14 +27,16 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end z-20">
+                    {
+                    user ? 
                     <NavLink
                     to="/login"
-                    className={({ isActive, isPending }) =>{
-                        return isPending ? "pending" : isActive ? "bg-[#0097e6] btn bg-transparent text-white border-white border-2 px-7 hover:bg-[#0097e6]" : "btn bg-transparent text-white border-white border-2 px-7 hover:bg-[#0097e6]"
+                    className= "btn"
+                    >Login</NavLink> :
+                    <button 
+                    className="bg-[#0097e6] btn bg-transparent text-white border-white border-2 px-7 hover:bg-[#0097e6]"
+                    >Log out</button>
                     }
-                    
-                    }
-                    >Login</NavLink>
                 </div>
             </div>
         </div>

@@ -1,10 +1,13 @@
-
-import { useState } from "react";
+import { BiArrowBack } from 'react-icons/bi';
+import { useContext, useState } from "react";
 import logo from "../../assets/logo1.png";
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const LogIn = () => {
+    const {logInWithEmailPassword} = useContext(AuthContext);
 
     const [passwordView, setPasswordView] = useState(false);
     const [error, setError] = useState("");
@@ -30,13 +33,31 @@ const LogIn = () => {
             setError("Password must have special characters!!");
             return;
         }
-        alert("Your password is correct!");
+        
+        logInWithEmailPassword(email, password)
+        .then(() => {
+            Swal.fire(
+                'Successfully logged-in!',
+                'You clicked the button!',
+                'success'
+              )
+        })
+        .catch((err) => {
+            Swal.fire({
+                icon: 'error',
+                title: err.message,
+                text: 'Something went wrong!',
+              })
+        })
     }
 
 
     return (
 
         <div className="h-full bg-gradient-to-tl from-[#00a8ff] to-indigo-900 w-full py-16 px-4">
+            <div>
+                <Link to="/" className="bg-[#9c88ff] flex w-fit duration-500 hover:bg-slate-500 items-center gap-2 text-white py-3 px-5 font-medium rounded-lg"><BiArrowBack className="text-2xl"></BiArrowBack>Back to Home</Link>
+            </div>
             <div className="flex flex-col items-center justify-center">
                 <img src={logo} alt="logo" />
 
