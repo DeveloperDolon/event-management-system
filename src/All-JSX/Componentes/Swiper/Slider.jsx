@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation'
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import "./Slider.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -38,20 +39,28 @@ const Slider = () => {
 
                 className=""
             >
-                <SwiperSlide className="w-fit relative">
+                <SwiperSlide
+                className="w-fit relative shadow-2xl">
                     {({ isActive }) => {
 
                         return <>
-                            <span>Award Function</span>
+                            <span className={` md:text-4xl text-2xl border-[#F9A51A] ${isActive && "border-2"}  overlay z-30 text-white`}>
+                                <span className="absolute bottom-[50%] left-5 bebas-font">
+                                    <h1>Award Ceremonies</h1>
+                                    <Link className="btn">hello</Link>
+                                </span>
+                            </span>
                             <img className="md:h-[500px] h-[300px] w-full rounded-lg bg-gray-100 p-5" src="https://i.ibb.co/SyWRdVY/wan-san-yip-ID1y-Wa1-Wpx0-unsplash.jpg" alt="" />
                         </>
                     }}
                 </SwiperSlide>
-                <SwiperSlide className="w-fit relative">
+                <SwiperSlide className="w-fit relative shadow-2xl">
 
                     {({ isActive }) => {
                         return (<>
-                            <span>Corporate Meeting</span>
+                            <span className={` md:text-4xl text-2xl border-[#F9A51A] ${isActive && "border-2"}  overlay z-30 text-white`}>
+                                <span className="absolute bottom-[50%] left-5 bebas-font">Corporate Meeting</span>
+                            </span>
                             <img className="md:h-[500px] h-[300px] w-full rounded-lg bg-gray-100 p-5" src="https://i.ibb.co/Cnx9hZb/group-diverse-people-having-business-meeting.jpg" alt="" />
                         </>
                         )
@@ -59,46 +68,55 @@ const Slider = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className="w-fit relative">
+                <SwiperSlide className="w-fit relative shadow-2xl">
 
                     {({ isActive }) => {
                        
                         return <>
-                            <span>Product Launch</span>
+                            <span className={` md:text-4xl text-2xl border-[#F9A51A] ${isActive && "border-2"}  overlay z-30 text-white`}>
+                                <span className="absolute bottom-[50%] left-5 bebas-font">Product Launch</span>
+                            </span>
                             <img className="md:h-[500px] h-[300px] w-full rounded-lg bg-gray-100 p-5" src="https://i.ibb.co/7p8rdt1/teemu-paananen-bzdhc5b3-Bxs-unsplash.jpg" alt="" />
                         </>
                     }}
 
 
                 </SwiperSlide>
-                <SwiperSlide className="w-fit relative">
+                <SwiperSlide className="w-fit relative shadow-2xl">
 
                     {({ isActive }) => {
 
                         return <>
-                            <span>Team Building workshop</span>
+                            <span className={` md:text-4xl text-2xl border-[#F9A51A] ${isActive && "border-2"}  overlay z-30 text-white`}>
+                                <span className="absolute bottom-[50%] left-5 bebas-font">Team Building workshop</span>
+                            </span>
                             <img className="md:h-[500px] h-[300px] w-full rounded-lg bg-gray-100 p-5" src="https://i.ibb.co/N7dtCVD/austin-distel-rxp-Th-Owu-Vg-E-unsplash.jpg" alt="" />
                         </>
                     }}
 
                 </SwiperSlide>
-                <SwiperSlide className="w-fit relative">
+                <SwiperSlide className="w-fit relative shadow-2xl">
 
                     {({ isActive }) => {
 
                         return <>
-                            <span>Tread Show</span>
+                            <span className={` md:text-4xl text-2xl border-[#F9A51A] ${isActive && "border-2"}  overlay z-30 text-white`}>
+                                <span className="absolute bottom-[50%] left-5 bebas-font">Tread Show</span>
+                            </span>
+                            
                             <img className="md:h-[500px] h-[300px] w-full rounded-lg bg-gray-100 p-5" src="https://i.ibb.co/0mmS1fr/tim-meyer-As-T9-Dt11-Fk-A-unsplash.jpg" alt="" />
                         </>
                     }}
 
                 </SwiperSlide>
-                <SwiperSlide className="w-fit relative">
+                <SwiperSlide className="w-fit relative shadow-2xl">
 
                     {({ isActive }) => {
 
                         return <>
-                            <span>Conferences</span>
+                            <span className={` md:text-4xl text-2xl border-[#F9A51A] ${isActive && "border-2"}  overlay z-30 text-white`}>
+                                <span className="absolute bottom-[50%] left-5 bebas-font">Conferences</span>
+                            </span>
                             <img className="md:h-[500px] h-[300px] w-full rounded-lg bg-gray-100 p-5" src="https://i.ibb.co/MPPt916/alexandre-pellaes-6v-Ajp0psc-X0-unsplash.jpg" alt="" />
                         </>
                     }}

@@ -1,6 +1,6 @@
 
 button#banner-button {
-    background:rgb(235, 19, 145);
+    background: #00a8ff;
     /* background-color: red; */
     transition: .5s ease all !important;
     padding: 15px 30px;
