@@ -23,7 +23,7 @@ const Banner = () => {
 
             <div className="px-5 lg:px-0">
                 <ScrollAnimation>
-                    <h1 className="md:text-6xl font-medium z-0 text-3xl text-white leading-relaxed">Crafting <span className='text-[#e84118]'>Memorable</span> Moments for Your <span className='text-[#e84118]'>Corporate</span> World</h1>
+                    <h1 className="lg:text-6xl md:text-4xl font-medium z-0 text-3xl text-white leading-relaxed">Crafting <span className='text-[#e84118]'>Memorable</span> Moments for Your <span className='text-[#e84118]'>Corporate</span> World</h1>
                 </ScrollAnimation>
 
                 <ScrollAnimation>

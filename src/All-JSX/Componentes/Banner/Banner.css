@@ -13,3 +13,13 @@ button#banner-button:hover {
     /* background-color: black; */
     letter-spacing: 10px;
 }
+
+#card-btn{
+    background-color: #00a8ff;
+    transition: .5s ease all !important;
+}
+
+#card-btn:hover {
+    background-color: #dcdde1;
+    letter-spacing: 5px;
+}
