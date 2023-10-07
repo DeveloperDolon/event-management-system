@@ -5,6 +5,8 @@ import "./Banner.css";
 import animationData from "../../../../public/animation_lnezqfbz.json";
 import ScrollAnimation from '../ScrollAnimation/ScrollAnimation';
 
+import blob from "../../../assets/rev-slider-04.png"
+
 const Banner = () => {
 
     const defaultOptions = {
@@ -17,19 +19,20 @@ const Banner = () => {
     };
 
     return (
-        <div className="h-[calc(100vh-92px)] grid grid-cols-1 md:grid-cols-2 items-center">
+        <div className="lg:h-[calc(100vh-92px)] h-auto grid grid-cols-1 md:grid-cols-2 items-center relative">
 
             <div className="px-5 lg:px-0">
                 <ScrollAnimation>
-                    <h1 className="md:text-6xl z-0 text-3xl leading-loose bebas-text">Crafting Memorable Moments for Your Corporate World</h1>
+                    <h1 className="md:text-6xl font-medium z-0 text-3xl text-white leading-relaxed">Crafting <span className='text-[#e84118]'>Memorable</span> Moments for Your <span className='text-[#e84118]'>Corporate</span> World</h1>
                 </ScrollAnimation>
 
                 <ScrollAnimation>
-                    <p className=" mt-5 leading-loose">
+                    <p className=" mt-5 leading-loose text-white">
                         Welcome to CorporateEventsHub.com, your premier source for crafting unforgettable corporate gatherings. At Corporate Events Hub, we specialize in bringing your corporate vision to life, one event at a time.
                     </p>
                 </ScrollAnimation>
                 
+                <img className='absolute top-[10%] z-0 w-[30%]' src={blob} alt="" />
 
                 <div className="mt-7">
                     <ScrollAnimation>

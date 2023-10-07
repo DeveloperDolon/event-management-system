@@ -43,7 +43,7 @@ const ScrollAnimation = ({children}) => {
                 bottom: 4,
                 left: 0,
                 right: 0,
-                background: "#dcdde1",
+                background: "#00a8ff",
                 zIndex: 100
             }}
             >

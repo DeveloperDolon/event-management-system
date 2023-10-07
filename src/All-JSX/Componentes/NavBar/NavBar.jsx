@@ -16,7 +16,7 @@ const NavBar = () => {
                             <li><NavLink to={"/register"}>Register</NavLink></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case"><img className="h-10" src={logo} alt="Logo Image" /></a>
+                    <a className="btn btn-ghost normal-case z-20"><img className="h-10" src={logo} alt="Logo Image" /></a>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-2">
