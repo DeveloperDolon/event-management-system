@@ -6,7 +6,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation'
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import "./Slider.css";
-import { Link } from "react-router-dom";
 
 
 
