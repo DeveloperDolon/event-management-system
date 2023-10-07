@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
 export const AuthContext = createContext();
@@ -8,6 +8,10 @@ export const AuthContext = createContext();
 const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null);
+
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+    const twitterProvider = new TwitterAuthProvider();
 
     const createUserWithEmailPassword = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -17,16 +21,36 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    const logInWithGoogle = () => {
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    const logInWithGithub = () => {
+        return signInWithPopup(auth, githubProvider);
+    }
+
+    const logInWithTwitter = () => {
+        return signInWithPopup(auth, twitterProvider);
+    }
+
+    const logOut = () => {
+        return signOut(auth);
+    }
+
     const authInfo = {
         createUserWithEmailPassword,
         logInWithEmailPassword,
-        user
+        user,
+        logOut,
+        logInWithGoogle,
+        logInWithGithub,
+        logInWithTwitter
     };
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            console.log(currentUser);
+            console.log("right now current user ",currentUser);
         })
 
         return () => {
