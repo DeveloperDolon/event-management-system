@@ -7,6 +7,8 @@ import Register from '../Pages/Register.jsx';
 import ServiceDetails from '../Pages/ServiceDetails/ServiceDetails.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 import Cart from '../Pages/Cart/Cart.jsx';
+import About from '../Pages/About/About.jsx';
+import Contact from '../Pages/Contact/Contact.jsx';
 
 export const MainRoute = createBrowserRouter([
     {
@@ -35,6 +37,14 @@ export const MainRoute = createBrowserRouter([
                 path: "/cart",
                 loader: () => fetch("/service.json"),
                 element: <PrivateRoute><Cart></Cart></PrivateRoute>
+            },
+            {
+                path: "/about",
+                element: <About></About>
+            },
+            {
+                path: "/contact",
+                element: <Contact></Contact>
             }
         ]
     },
