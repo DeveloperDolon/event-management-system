@@ -2,13 +2,16 @@ import { useContext, useState } from "react";
 import logo from "../../assets/logo1.png";
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { BiArrowBack } from 'react-icons/bi';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import SocialMediaLogInButton from "../Componentes/SocialMediaLogInButton/SocialMediaLogInButton";
 
 const Register = () => {
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const {createUserWithEmailPassword} = useContext(AuthContext);
 
@@ -48,7 +51,13 @@ const Register = () => {
                 'Successfully registered!',
                 'You clicked the button!',
                 'success'
-              )
+            );
+
+            if(location.state) {
+                navigate(location.state);
+                return
+            }
+            navigate("/");
         }).catch((err) => {
             Swal.fire({
                 icon: 'error',

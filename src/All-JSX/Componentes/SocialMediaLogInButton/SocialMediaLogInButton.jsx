@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialMediaLogInButton = () => {
 
     const {logInWithGoogle, logInWithGithub, logInWithTwitter} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleGoogleLogin = () => {
         logInWithGoogle()
@@ -13,7 +16,12 @@ const SocialMediaLogInButton = () => {
                 'Successfully registered!',
                 'You clicked the button!',
                 'success'
-            )
+            );
+            if(location.state) {
+                navigate(location.state);
+                return
+            }
+            navigate("/");
         }).catch((err) => {
             Swal.fire({
                 icon: 'error',
@@ -31,6 +39,11 @@ const SocialMediaLogInButton = () => {
                 'You clicked the button!',
                 'success'
             )
+            if(location.state) {
+                navigate(location.state);
+                return
+            }
+            navigate("/");
         }).catch((err) => {
             Swal.fire({
                 icon: 'error',
@@ -48,6 +61,11 @@ const SocialMediaLogInButton = () => {
                 'You clicked the button!',
                 'success'
             )
+            if(location.state) {
+                navigate(location.state);
+                return
+            }
+            navigate("/");
         }).catch((err) => {
             Swal.fire({
                 icon: 'error',

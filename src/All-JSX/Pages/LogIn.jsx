@@ -2,13 +2,15 @@ import { BiArrowBack } from 'react-icons/bi';
 import { useContext, useState } from "react";
 import logo from "../../assets/logo1.png";
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 import SocialMediaLogInButton from '../Componentes/SocialMediaLogInButton/SocialMediaLogInButton';
 
 const LogIn = () => {
     const {logInWithEmailPassword} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const [passwordView, setPasswordView] = useState(false);
     const [error, setError] = useState("");
@@ -41,7 +43,12 @@ const LogIn = () => {
                 'Successfully logged-in!',
                 'You clicked the button!',
                 'success'
-              )
+              );
+            if(location.state) {
+                navigate(location.state);
+                return
+            }
+            navigate("/");
         })
         .catch((err) => {
             Swal.fire({
