@@ -20,7 +20,9 @@ console.log(greetign);
 
 #### Answer: A
 
-<i>Write your explanation here</i>
+<i>
+  This line declares a variable named greeting using the let keyword. However, at this point, the variable greeting has not been assigned any value, so it is undefined. After that an empty object stored in a separate global variable named "greetign" and then consoled it. So the result becomes an empty object.
+</i>
 
 </p>
 </details>
@@ -43,9 +45,13 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C
 
-<i>Write your explanation here</i>
+<i>
+  JavaScript is a dynamically typed language, which means it will attempt to perform implicit type conversion when you use the + operator. In this case, JavaScript will try to convert the number 1 to a string and then concatenate the two strings together.
+
+So, the correct answer is: 12
+</i>
 
 </p>
 </details>
@@ -69,9 +75,11 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A
 
-<i>Write your explanation here</i>
+<i>
+  The food array still contains the original values "🍕", "🍫", "🥑", and "🍔" because the modification was made to a separate property of the info object.
+</i>
 
 </p>
 </details>
@@ -94,9 +102,11 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: B
 
-<i>Write your explanation here</i>
+<i>
+  When you call a function without providing the expected arguments, JavaScript will use undefined as the value for those parameters. In this case, since you haven't passed any argument, the name parameter inside the function will be undefined.
+</i>
 
 </p>
 </details>
@@ -122,9 +132,14 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C
 
-<i>Write your explanation here</i>
+<i>
+  For num = 0, the condition if (num) evaluates to false because 0 is falsy. Therefore, count remains 0.
+  For num = 1, the condition if (num) evaluates to true because 1 is truthy. So, count becomes 1.
+  For num = 2 and num = 3, the conditions if (num) both evaluate to true. count increments by 1 for each of these values.
+  So, the output will be 3 because there are three truthy values (1, 2, and 3) in the nums array, and the count variable accumulates the count of those truthy values during the forEach loop
+</i>
 
 </p>
 </details>
