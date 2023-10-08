@@ -4,10 +4,10 @@ import "./event.css"
 
 const EventItem = ({ data }) => {
 
-    const {item_name, item_description, item_image } = data;
+    const {id, item_name, item_description, item_image } = data;
 
     return (
-        <div id="event-item" className="grid md:grid-cols-5 items-center md:gap-10 gap-5 px-16 py-10 rounded-2xl">
+        <div data-aos={`fade-${id % 2 === 0 ? "left" : "right"}`} id="event-item" className="grid md:grid-cols-5 items-center md:gap-10 gap-5 px-16 py-10 rounded-2xl">
             <div className=" p-4 rounded-lg overflow-hidden">
                 <ScrollAnimation>
                     <img src={item_image} className="md:w-full h-28 object-cover rounded-lg" alt="" />

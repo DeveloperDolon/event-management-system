@@ -23,10 +23,7 @@ const NavBar = () => {
             <li><NavLink className="duration-500 font-semibold hover:bg-[#7f8fa6]" to={"/"}>Home</NavLink></li>
             <li><NavLink className="duration-500 font-semibold hover:bg-[#7f8fa6]" to={"/about"}>About</NavLink></li>
             <li><NavLink className="duration-500 font-semibold hover:bg-[#7f8fa6]" to={"/contact"}>Contact Us</NavLink></li>
-    </>
-
-    const privateRouteNavs = <>
-        <li><NavLink className=" duration-500 font-semibold hover:bg-[#7f8fa6]" to={"/cart"}>Cart</NavLink></li>
+            <li><NavLink className=" duration-500 font-semibold hover:bg-[#7f8fa6]" to={"/cart"}>Cart</NavLink></li>
     </>
  
     return (
@@ -39,7 +36,6 @@ const NavBar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {publicRouteNavs}
-                            {user && privateRouteNavs}
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case z-20"><img className="h-10" src={logo} alt="Logo Image" /></a>
@@ -47,12 +43,11 @@ const NavBar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal space-x-2 bg-white z-30 rounded-lg p-3">
                         {publicRouteNavs}
-                        {user && privateRouteNavs}
                     </ul>
                 </div>
                 <div className="navbar-end z-20">
                     <div className="justify-center items-center gap-2 mr-2">
-                        {user ? <img className="md:w-12 w-8 rounded-full outline-white outline" src={user.photoURL ? user.photoURL : defaultUserImg}/> : ""}
+                        {user ? <img className="md:w-12 w-8 rounded-full outline-white outline" src={user.photoURL ? user.photoURL : defaultUserImg} alt="Profile Pic"/> : ""}
                     </div>
 
                     {

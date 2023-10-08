@@ -13,6 +13,9 @@ import Banner from "../Componentes/Banner/Banner";
 import NavBar from "../Componentes/NavBar/NavBar";
 import BgSlider from "../Componentes/BgSlider/BgSlider";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Home = () => {
     const services = useLoaderData();
     const [eventItems, setEventItems] = useState([]);
@@ -25,6 +28,15 @@ const Home = () => {
             preserveAspectRatio: "xMidYMid slice"
         }
     };
+
+    useEffect(() => {
+        AOS.init({
+            offset: 200,
+            duration: 600,
+            easing: 'ease-in-sine',
+            delay: 100,
+        });
+    });
 
     useEffect(() => {
         fetch("/eventItems.json")
@@ -88,9 +100,9 @@ const Home = () => {
 
                 <div className="grid md:grid-cols-2 grid-cols-1 items-center mt-16 gap-10">
                     <div className="">
-                        <div className="collapse collapse-plus bg-base-200">
+                        <div data-aos="fade-down" className="collapse collapse-plus bg-base-200">
                             <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title text-xl font-medium">
+                            <div  className="collapse-title text-xl font-medium">
                                 ALL KIND OF LOGISTICS AND RESOURCES SUPPORT
                             </div>
                             <div className="collapse-content">
@@ -98,7 +110,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="collapse collapse-plus bg-base-200">
+                        <div data-aos="fade-top" className="collapse collapse-plus bg-base-200">
                             <input type="radio" name="my-accordion-3" />
                             <div className="collapse-title text-xl font-medium">
                                 EXPERIENCED EVENT PLANNER AND MANAGER
@@ -107,7 +119,7 @@ const Home = () => {
                                 <p>When it&apos;s about making your Event successful, it&apos;s all about making a good plan, managing and executing successfully. And, we have experienced who will make your event unique and memorable!</p>
                             </div>
                         </div>
-                        <div className="collapse collapse-plus bg-base-200">
+                        <div data-aos="fade-right" className="collapse collapse-plus bg-base-200">
                             <input type="radio" name="my-accordion-3" />
                             <div className="collapse-title text-xl font-medium">
                                 Company Values and Mission Statement.
@@ -116,7 +128,7 @@ const Home = () => {
                                 <p>Our company is driven by a commitment to excellence in event management. Our mission is to transform your vision into extraordinary and memorable events, tailored to your specific needs and preferences.</p>
                             </div>
                         </div>
-                        <div className="collapse collapse-plus bg-base-200">
+                        <div data-aos="fade-left" className="collapse collapse-plus bg-base-200">
                             <input type="radio" name="my-accordion-3" />
                             <div className="collapse-title text-xl font-medium">
                                 Portfolio
@@ -171,19 +183,31 @@ const Home = () => {
                         </div>
                         <div className="mx-auto container md:-mt-28 -mt-20 flex justify-center items-center">
                             <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 gap-x-2 gap-y-2 lg:gap-x-6 md:gap-x-6 md:gap-y-6">
-                                <div className="flex justify-center flex-col items-center w-36 h-36 md:w-44 md:h-48 lg:w-56 lg:h-56 bg-white shadow rounded-2xl">
+                                <div 
+                                data-aos="fade-down"
+                                data-aos-easing="linear"
+                                 className="flex justify-center flex-col items-center w-36 h-36 md:w-44 md:h-48 lg:w-56 lg:h-56 bg-white shadow rounded-2xl">
                                     <h2 className="lg:text-5xl md:text-4xl text-2xl font-extrabold leading-10 text-center text-gray-800">40+</h2>
                                     <p className="mt-4 text-sm md:text-base lg:text-lg leading-none text-center text-gray-600">Happy Clients</p>
                                 </div>
-                                <div className="flex justify-center flex-col items-center w-36 h-36 md:w-44 md:h-48 lg:w-56 lg:h-56 bg-white shadow rounded-2xl">
+                                <div
+                                data-aos="fade-down"
+                                data-aos-easing="linear"
+                                className="flex justify-center flex-col items-center w-36 h-36 md:w-44 md:h-48 lg:w-56 lg:h-56 bg-white shadow rounded-2xl">
                                     <h2 className="lg:text-5xl md:text-4xl text-2xl font-extrabold leading-10 text-center text-gray-800">540+</h2>
                                     <p className="mt-4 text-sm md:text-base lg:text-lg leading-none text-center text-gray-600">Events Completed</p>
                                 </div>
-                                <div className="flex justify-center flex-col items-center w-36 h-36 md:w-44 md:h-48 lg:w-56 lg:h-56 bg-white shadow rounded-2xl">
+                                <div 
+                                data-aos="fade-down"
+                                data-aos-easing="linear"
+                                className="flex justify-center flex-col items-center w-36 h-36 md:w-44 md:h-48 lg:w-56 lg:h-56 bg-white shadow rounded-2xl">
                                     <h2 className="lg:text-5xl md:text-4xl text-2xl font-extrabold leading-10 text-center text-gray-800">300</h2>
                                     <p className="mt-4 text-sm md:text-base lg:text-lg leading-none text-center text-gray-600">Dedicated Members</p>
                                 </div>
-                                <div className="flex justify-center flex-col items-center w-36 h-36 md:w-44 md:h-48 lg:w-56 lg:h-56 bg-white shadow rounded-2xl">
+                                <div 
+                                data-aos="fade-down"
+                                data-aos-easing="linear"
+                                className="flex justify-center flex-col items-center w-36 h-36 md:w-44 md:h-48 lg:w-56 lg:h-56 bg-white shadow rounded-2xl">
                                     <h2 className="lg:text-5xl md:text-4xl text-2xl font-extrabold leading-10 text-center text-gray-800">25+</h2>
                                     <p className="mt-4 text-sm md:text-base lg:text-lg leading-none text-center text-gray-600">Awards Won</p>
                                 </div>

@@ -1,6 +1,16 @@
+import Swal from "sweetalert2";
 import NavBar from "../../Componentes/NavBar/NavBar";
 
 function Contact() {
+
+    const handleSubmit = () => {
+        Swal.fire(
+            'Your message submitted!',
+            'You clicked the button!',
+            'success'
+          )
+    }
+
     return (
         <div className="bg-gradient-to-b from-purple-600 to-indigo-700 h-auto w-full">
 
@@ -43,7 +53,7 @@ function Contact() {
                     </div>
                     <p className="text-xs leading-3 text-gray-600 mt-4">By clicking submit you agree to our terms of service, privacy policy and how we use data as stated</p>
                     <div className="flex items-center justify-center w-full">
-                        <button className="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-indigo-700 rounded hover:bg-indigo-600 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none">SUBMIT</button>
+                        <button onClick={handleSubmit} className="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-indigo-700 rounded hover:bg-indigo-600 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none">SUBMIT</button>
                     </div>
                 </div>
             </div>
