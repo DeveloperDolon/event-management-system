@@ -2,7 +2,7 @@ import { motion, useInView, useAnimation } from "framer-motion"
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 
-const ScrollAnimation = ({children}) => {
+const ScrollAnimation = ({children, className}) => {
 
     const ref = useRef(null);
     const isInView = useInView(ref, {once: true});
@@ -17,7 +17,7 @@ const ScrollAnimation = ({children}) => {
     }, [isInView]);
 
     return (
-        <div ref={ref} className="relative overflow-hidden">
+        <div ref={ref} className={`relative overflow-hidden ${className}`}>
             <motion.div
             variants={{
                 hidden: {opacity: 0, y: 75},
@@ -56,5 +56,6 @@ const ScrollAnimation = ({children}) => {
 export default ScrollAnimation;
 
 ScrollAnimation.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    className: PropTypes.string
 }

@@ -3,6 +3,7 @@ import NavBar from "../../Componentes/NavBar/NavBar";
 import { useEffect, useState } from "react";
 import ScrollAnimation from "../../Componentes/ScrollAnimation/ScrollAnimation";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { setLocalStorageData } from "../../utilitis/localStorage/localStorage";
 
 const ServiceDetails = () => {
     const {id} =  useParams();
@@ -13,6 +14,10 @@ const ServiceDetails = () => {
         const finding = data.find(item => (item.id + "") === id);
         setMainData(finding);
     }, [id]);
+
+    const handleAddToCart = (id) => {
+        setLocalStorageData(id);
+    }
 
     return (
         <div>
@@ -42,6 +47,7 @@ const ServiceDetails = () => {
                         <h1 className="text-xl mb-6 font-medium">Price : <span className="font-bold">{mainData.category_price}$</span></h1>
 
                         <button 
+                        onClick={() => handleAddToCart(id)}
                         className="w-full btn bg-[#9c88ff] text-white duration-500 hover:bg-[#8c7ae6] hover:tracking-widest flex gap-3">
                             <AiOutlineShoppingCart className="text-2xl"></AiOutlineShoppingCart>
                             Add to Cart
